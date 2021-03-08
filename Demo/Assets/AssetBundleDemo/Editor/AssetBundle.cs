@@ -100,4 +100,15 @@ public class AssetBundle
        
        
     }
+
+
+    #region 打包
+    [MenuItem("AssetBundle/BuildBundle")]
+    static void BuildAssetBundles()
+    {
+        string outPath = PathUtil.GetAssetBundelOutPath();
+        BuildPipeline.BuildAssetBundles(outPath, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows);
+    }
+    #endregion
+
 }

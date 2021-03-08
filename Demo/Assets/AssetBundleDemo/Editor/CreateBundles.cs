@@ -9,8 +9,7 @@ public class CreateBundles
     [MenuItem("Assets/Build AssetBundles")]
     static void BuildAllAssetBundles()
     {
-        string outPath = "Assets/AssetBundleDemo/AssetBundles";
-        string path1 = Application.streamingAssetsPath;
+        string outPath = PathUtil.GetAssetBundelOutPath();
         if (!System.IO.Directory.Exists(outPath))
         {
             System.IO.Directory.CreateDirectory(outPath); 

@@ -1,0 +1,10 @@
+ManifestFileVersion: 0
+CRC: 918325945
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: prefab/windowprefab/image.bytes
+      Dependencies: {}
+    Info_1:
+      Name: prefab/cube.bytes
+      Dependencies: {}
