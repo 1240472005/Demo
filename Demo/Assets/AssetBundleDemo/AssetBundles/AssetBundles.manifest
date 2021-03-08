@@ -1,7 +1,10 @@
 ManifestFileVersion: 0
-CRC: 3059839729
+CRC: 3683824225
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: test
+      Name: prefab/windowprefab/image.bytes
+      Dependencies: {}
+    Info_1:
+      Name: prefab/cube.bytes
       Dependencies: {}
