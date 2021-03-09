@@ -31,3 +31,9 @@
  5、如果找到文件就修改他的AssetBundle Labels
  6、用AssetImporter类修改名称后缀
  7、保存对应的文件夹名和路径
+
+ //加载时 要先加载他依赖的AssetBundle,然后才能加载本身 卸载时要先卸载自身,然后看他所依赖的AssetBundle是否还有没有
+ //被依赖的assetBundle如果没有那么也卸载，如果有那就不卸载
+ //卸载说明 假如CubeA 和CubeB 同时依赖材质C 卸载CubeA的时候则材质C则不能卸载
+
+ AssetBundle.Unload(bool) false:只卸载包 true:卸载包和Obj
