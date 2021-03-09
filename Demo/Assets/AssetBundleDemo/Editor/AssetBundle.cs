@@ -111,4 +111,20 @@ public class AssetBundle
     }
     #endregion
 
+     #region 删除
+    [MenuItem("AssetBundle/DeleteBundle")]
+    static void DeleteAssetBundles()
+    {
+        string outPath = PathUtil.GetAssetBundelOutPath();
+        if (Directory.Exists(outPath))
+        {
+            Directory.Delete(outPath,true);
+            File.Delete(outPath + ".meta");
+            AssetDatabase.Refresh();
+        }
+    }
+    #endregion
+
+
+
 }
