@@ -30,13 +30,30 @@ public class AssetBundleLoader
     /// 加载完成
     /// </summary>
     private Action<string> loadComplete;
+
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="bundleName">包名</param>
+    /// <param name="loadProgress">加载进度</param>
+    /// <param name="loadComplete">加载完成</param>
+    public AssetBundleLoader(string bundleName,Action<string,float> loadProgress,Action<string> loadComplete)
+    {
+        this.bundleName = bundleName;
+        this.loadProgress = loadProgress;
+        this.loadComplete = loadComplete;
+        this.bundlePath = PathUtil.GetWWWAeestBundelPath()+"/"+bundleName;
+        this.progress = 0.0f;
+        this.www = null;
+        this.assetLoader = null;
+    }
     /// <summary>
     /// 加载资源包
     /// </summary>
     /// <returns></returns>
     public IEnumerator Load()
     {
-        progress = 0.0f ;
+        
         www = new WWW(bundlePath);
         while (!www.isDone)
         {
