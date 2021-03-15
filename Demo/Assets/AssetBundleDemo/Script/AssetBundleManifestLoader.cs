@@ -24,6 +24,7 @@ public class AssetBundleManifestLoader
     /// Manifest文件
     /// </summary>
     private AssetBundleManifest manifest;
+    public AssetBundleManifest Manifest=>manifest;
     /// <summary>
     /// 路径
     /// </summary>
@@ -35,12 +36,15 @@ public class AssetBundleManifestLoader
 
     private bool isFinish;
 
+    public System.Action action;
+
     public bool IsFinish => isFinish;
 
     //TODO
     private AssetBundleManifestLoader()
     {
-        this.manifestPath = PathUtil.GetWWWAeestBundelPath();
+        this.manifestPath = PathUtil.GetWWWAeestBundelPath()+"/"+ "StreamingAssets";
+        Debug.Log(manifestPath);
         this.manifest = null;
         this.assetBundle = null;
         isFinish = false;
@@ -60,7 +64,7 @@ public class AssetBundleManifestLoader
             {
                 this.assetBundle = www.assetBundle;
                 this.manifest = this.assetBundle.LoadAsset("AssetBundleManifest") as AssetBundleManifest;
-                //加载完成
+                action.Invoke();
                 this.isFinish = true;
             }
         }

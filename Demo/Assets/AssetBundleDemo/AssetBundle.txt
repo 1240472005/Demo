@@ -37,3 +37,5 @@
  //卸载说明 假如CubeA 和CubeB 同时依赖材质C 卸载CubeA的时候则材质C则不能卸载
 
  AssetBundle.Unload(bool) false:只卸载包 true:卸载包和Obj
+ //加载配置文件
+ this.manifest = this.assetBundle.LoadAsset("AssetBundleManifest") as AssetBundleManifest;
