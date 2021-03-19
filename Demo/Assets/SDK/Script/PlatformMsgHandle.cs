@@ -29,14 +29,16 @@ public class PlatformMsgHandle : MonoBehaviour
     protected void OnMessage(string param)
     {
         JsonData jd= LitJson.JsonMapper.ToObject(param);
-        PlatformMsg msg=new PlatformMsg();
-        msg.iMsgId = (int)jd["iMsgId"];
-        msg.iPararm1 = (int)jd["iPararm1"];
-        msg.iPararm1 = (int)jd["iPararm2"];
-        msg.iPararm1 = (int)jd["iPararm3"];
-        msg.strPararm1 = (string)jd["strPararm1"];
-        msg.strPararm1 = (string)jd["strPararm2"];
-        msg.strPararm1 = (string)jd["strPararm3"];
+        PlatformMsg msg = new PlatformMsg
+        {
+            iMsgId = (int) jd["iMsgId"],
+            iPararm1 = (int) jd["iPararm1"],
+            iPararm2 = (int) jd["iPararm2"],
+            iPararm3 = (int) jd["iPararm3"],
+            strPararm1 = (string) jd["strPararm1"],
+            strPararm2 = (string) jd["strPararm2"],
+            strPararm3 = (string) jd["strPararm3"]
+        };
 
         msgQueue.Enqueue(msg);
     }
