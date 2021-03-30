@@ -25,3 +25,8 @@
     {
         return UnityEngine.Profiling.Profiler.GetTotalReservedMemoryLong();
     }
+
+
+Unity 里面的物体 用于通信的要写对物体名字 以及函数的名称
+
+接腾讯的APPID 是去平台申请的

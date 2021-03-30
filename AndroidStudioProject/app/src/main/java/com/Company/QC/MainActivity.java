@@ -2,12 +2,11 @@ package com.Company.QC;
 
 
 import android.os.Bundle;
-import com.
-public class MainActivity extends u {
-
+import  com.unity3d.player.*;
+public class MainActivity extends UnityPlayerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+       super.onCreate(savedInstanceState);
 
     }
 }
