@@ -15,6 +15,7 @@ public class AssetBundleRelation
     /// 包名
     /// </summary>
     private string bundleName;
+    public string BundleName => bundleName;
     /// <summary>
     /// 加载进度回调
     /// </summary>

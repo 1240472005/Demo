@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 918325945
+CRC: 857983698
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -7,4 +7,7 @@ AssetBundleManifest:
       Dependencies: {}
     Info_1:
       Name: prefab/cube.bytes
+      Dependencies: {}
+    Info_2:
+      Name: prefab/scene1.u3d
       Dependencies: {}

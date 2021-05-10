@@ -1,0 +1,32 @@
+﻿在java与Unity的调用中，需要写对名字 ，所以最好是复制粘贴
+//获取Windows内存的方法：
+1、引用命名空间  System.Runtime.InteropServices;
+2、引用类库 定义函数 
+    [DllImport("kernel32.dll")]
+    protected static extern void GlobalMemoryStatus(ref MEMORYSTATUSEX laBuff);
+3、编写函数
+    //获取windows可用内存
+     protected ulong GetWindowAvailMemory()
+    {
+        MEMORYSTATUSEX ms = new MEMORYSTATUSEX();
+        ms.dwLength = 64;
+        GlobalMemoryStatus(ref ms);
+        return ms.ullAvailPhys;
+    }
+    //获取window内存
+    protected ulong GetWindowTotalMemory()
+    {
+        MEMORYSTATUSEX ms = new MEMORYSTATUSEX();
+        ms.dwLength = 64;
+        GlobalMemoryStatus(ref ms);
+        return ms.ullTotalPhys;
+    }
+    protected long GetWindowUseMemory()
+    {
+        return UnityEngine.Profiling.Profiler.GetTotalReservedMemoryLong();
+    }
+
+
+Unity 里面的物体 用于通信的要写对物体名字 以及函数的名称
+
+接腾讯的APPID 是去平台申请的
