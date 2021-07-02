@@ -4,13 +4,24 @@
 --- DateTime: 2021/4/21 20:55
 ---
 ---//这是一个虚表
-local a = {test2=2,__index={test2=9527} ,cas=function()  print("safsafjasokfhasf") end}
-local b= {}
-b.test=1
+---local a = {test2=2,__index={test2=9527} ,cas=function()  print("safsafjasokfhasf") end}
+---local b= {}
+---b.test=1
 
-local c ={}
-setmetatable(c,{__index = b[a]})
-print(c.test2);
+---local c ={}
+---setmetatable(c,{__index = b[a]})
+---print(c.test2);
+require "BaseClass"
+local class1 = BaseClass("class1")
+	class1.__init = function(self)
+		self.var1 = 1
+	end
+	class1.func1 = function(self)
+		var1 = var1 + 1
+		self.var1 = self.var1 + 1
+		assert(var1 == 2)
+		assert(self.var1 == 2)
+	end
 
 
 
